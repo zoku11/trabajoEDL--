@@ -1,11 +1,107 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+using System;
+using System.Collections.Generic;
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>trabajoEDL__</RootNamespace>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+class Fruto
+{
+    public string Posicion { get; set; }
+    public char Tipo { get; set; }
+}
 
-</Project>
+class Caballo
+{
+    public string Posicion { get; private set; }
+
+    public Caballo(string posicionInicial)
+    {
+        Posicion = posicionInicial;
+    }
+
+    public void Mover(string movimiento)
+    {
+        char columna = Posicion[0];
+        int fila = int.Parse(Posicion[1].ToString());
+
+        Dictionary<string, (int, int)> movimientosPosibles = new Dictionary<string, (int, int)>
+        {
+            { "UL", (-1, 2) }, { "UR", (1, 2) },
+            { "LU", (-2, 1) }, { "LD", (-2, -1) },
+            { "RU", (2, 1) }, { "RD", (2, -1) },
+            { "DL", (-1, -2) }, { "DR", (1, -2) }
+        };
+
+        if (movimientosPosibles.ContainsKey(movimiento))
+        {
+            columna = (char)(columna + movimientosPosibles[movimiento].Item1);
+            fila += movimientosPosibles[movimiento].Item2;
+        }
+
+        if (columna >= 'A' && columna <= 'H' && fila >= 1 && fila <= 8)
+        {
+            Posicion = columna.ToString() + fila;
+        }
+    }
+}
+
+class Tablero
+{
+    private Dictionary<string, char> frutos;
+
+    public Tablero()
+    {
+        frutos = new Dictionary<string, char>();
+    }
+
+    public void AgregarFruto(string posicion, char tipo)
+    {
+        frutos[posicion] = tipo;
+    }
+
+    public char RecogerFruto(string posicion)
+    {
+        if (frutos.ContainsKey(posicion))
+        {
+            char fruto = frutos[posicion];
+            frutos.Remove(posicion);
+            return fruto;
+        }
+        return '\0';
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Tablero tablero = new Tablero();
+        Console.Write("Ingrese ubicación de los frutos: ");
+        string[] entradasFrutos = Console.ReadLine().Split(',');
+
+        foreach (var entrada in entradasFrutos)
+        {
+            string posicion = entrada.Substring(0, 2);
+            char fruto = entrada[2];
+            tablero.AgregarFruto(posicion, fruto);
+        }
+
+        Console.Write("Ingrese posición inicial del caballo: ");
+        string posicionCaballo = Console.ReadLine();
+        Caballo caballo = new Caballo(posicionCaballo);
+
+        Console.Write("Ingrese los movimientos del caballo: ");
+        string[] movimientos = Console.ReadLine().Split(',');
+
+        string frutosRecogidos = "";
+        foreach (var movimiento in movimientos)
+        {
+            caballo.Mover(movimiento);
+            char fruto = tablero.RecogerFruto(caballo.Posicion);
+            if (fruto != '\0')
+            {
+                frutosRecogidos += fruto + " ";
+            }
+        }
+
+        Console.WriteLine("Los frutos recogidos son: " + frutosRecogidos.Trim());
+    }
+}
+
