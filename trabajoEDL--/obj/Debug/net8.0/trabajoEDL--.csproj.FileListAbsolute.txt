@@ -1,0 +1,15 @@
+C:\Projects\trabajoEDL--\Solution1\trabajoEDL--\bin\Debug\net8.0\trabajoEDL--.exe
+C:\Projects\trabajoEDL--\Solution1\trabajoEDL--\bin\Debug\net8.0\trabajoEDL--.deps.json
+C:\Projects\trabajoEDL--\Solution1\trabajoEDL--\bin\Debug\net8.0\trabajoEDL--.runtimeconfig.json
+C:\Projects\trabajoEDL--\Solution1\trabajoEDL--\bin\Debug\net8.0\trabajoEDL--.dll
+C:\Projects\trabajoEDL--\Solution1\trabajoEDL--\bin\Debug\net8.0\trabajoEDL--.pdb
+C:\Projects\trabajoEDL--\Solution1\trabajoEDL--\obj\Debug\net8.0\trabajoEDL--.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\trabajoEDL--\Solution1\trabajoEDL--\obj\Debug\net8.0\trabajoEDL--.AssemblyInfoInputs.cache
+C:\Projects\trabajoEDL--\Solution1\trabajoEDL--\obj\Debug\net8.0\trabajoEDL--.AssemblyInfo.cs
+C:\Projects\trabajoEDL--\Solution1\trabajoEDL--\obj\Debug\net8.0\trabajoEDL--.csproj.CoreCompileInputs.cache
+C:\Projects\trabajoEDL--\Solution1\trabajoEDL--\obj\Debug\net8.0\trabajoEDL--.sourcelink.json
+C:\Projects\trabajoEDL--\Solution1\trabajoEDL--\obj\Debug\net8.0\trabajoEDL--.dll
+C:\Projects\trabajoEDL--\Solution1\trabajoEDL--\obj\Debug\net8.0\refint\trabajoEDL--.dll
+C:\Projects\trabajoEDL--\Solution1\trabajoEDL--\obj\Debug\net8.0\trabajoEDL--.pdb
+C:\Projects\trabajoEDL--\Solution1\trabajoEDL--\obj\Debug\net8.0\trabajoEDL--.genruntimeconfig.cache
+C:\Projects\trabajoEDL--\Solution1\trabajoEDL--\obj\Debug\net8.0\ref\trabajoEDL--.dll
