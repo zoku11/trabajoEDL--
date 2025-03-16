@@ -13,13 +13,13 @@ class Puente
     {
         if (string.IsNullOrEmpty(Estructura)) return false;
 
-        // Verificar que las bases (*) estén solo en los extremos
+       
         if (Estructura[0] != '*' || Estructura[Estructura.Length - 1] != '*') return false;
 
-        // Verificar si el puente es simétrico
+        
         if (!EsSimetrico()) return false;
 
-        // Verificar reglas de plataformas y refuerzos
+      
         return CumpleReglas();
     }
 
@@ -38,7 +38,7 @@ class Puente
         {
             if (Estructura[i] == '=')
             {
-                // No más de tres plataformas seguidas fuera del centro
+               
                 if (i > 0 && i < Estructura.Length - 2 && Estructura[i - 1] == '=' && Estructura[i + 1] == '=')
                 {
                     if (i > 1 && Estructura[i - 2] == '=' || i < Estructura.Length - 3 && Estructura[i + 2] == '=')
@@ -49,7 +49,7 @@ class Puente
             }
             else if (Estructura[i] == '+')
             {
-                // El refuerzo debe estar rodeado de plataformas
+               
                 if (i == 0 || i == Estructura.Length - 1 || Estructura[i - 1] != '=' || Estructura[i + 1] != '=')
                 {
                     return false;
